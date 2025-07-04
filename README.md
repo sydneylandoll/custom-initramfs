@@ -3,6 +3,7 @@
 A minimal initramfs written in shell.
 
 ## Directory layout
+```
 ├── bin
 ├── dev
 ├── etc
@@ -12,3 +13,4 @@ A minimal initramfs written in shell.
 ├── root
 ├── sbin
 └── sys
+```
