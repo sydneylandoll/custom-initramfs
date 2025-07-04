@@ -1,0 +1,11 @@
+# Build output
+initramfs.cpio*
+*.gz
+*.img
+
+# Logs
+*.log
+
+# Editor swap/backup files
+*.swp
+*~
