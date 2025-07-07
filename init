@@ -1,0 +1,3 @@
+#! /bin/busybox sh
+
+# Mount the /proc and /sys filesystems.
