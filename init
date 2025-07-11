@@ -5,6 +5,21 @@
 # Redirect all output and error messages to the system console during boot.
 exec >/dev/console 2>&1
 
+# Mount devtmpfs to find devices.
+mount -t devtmpfs none /dev
+
 # Mount the /proc and /sys filesystems.
 mount -t proc none /proc
 mount -t sysfs none /sys
+
+# Mount the root filesystem.
+echo "Mounting root filesystem..."
+mount -o ro $(findfs LABEL=myroot) /mnt/root
+
+# Clean up.
+umount /proc
+umount /sys
+umount /dev
+
+# Switch to rootfs
+exec switch_root /mnt/root /sbin/init
