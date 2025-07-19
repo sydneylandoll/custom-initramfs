@@ -1,6 +1,7 @@
 #! /bin/busybox sh
 
 # vim: set filetype=sh:
+set -x
 
 # Redirect all output and error messages to the system console during boot.
 exec >/dev/console 2>&1
@@ -15,7 +16,7 @@ rescue_shell() {
 mount -t devtmpfs none /dev || rescue_shell
 
 # Mount the /proc and /sys filesystems.
-mount -t proc none /proc || rescue_shell
+mount -t proc proc /proc || rescue_shell
 mount -t sysfs none /sys || rescue_shell
 
 # Mount the root filesystem.
