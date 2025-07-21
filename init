@@ -1,8 +1,7 @@
 #! /bin/busybox sh
 
 # vim: set filetype=sh:
-set -x
-
+#
 # Redirect all output and error messages to the system console during boot.
 exec >/dev/console 2>&1
 
